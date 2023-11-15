@@ -1,5 +1,5 @@
 schema
-  @server(port: 4000)
+  @server(port: 4000, enableGraphiql: true)
   @upstream(baseURL: "http://jsonplaceholder.typicode.com") {
   query: Query
 }
