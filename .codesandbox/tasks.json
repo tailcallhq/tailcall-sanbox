@@ -6,7 +6,7 @@
   "tasks": {
     "run tailcall": {
       "name": "run tailcall server",
-      "command": "ls /workspaces/tailcall-sandbox/exercises/*.graphql | entr -r $HOME/.tailcall/bin/tailcall start $(ls /workspaces/tailcall-sandbox/exercises/*.graphql)",
+      "command": "ls /workspaces/tailcall-sandbox/exercises/*.graphql | entr -r tailcall start $(ls /workspaces/tailcall-sandbox/exercises/*.graphql)",
       "runAtStart": true,
       "preview": {
         "port": 4000

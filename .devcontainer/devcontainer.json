@@ -22,7 +22,7 @@
   }
 
   // Uncomment the next line to run commands after the container is created.
-  // "postCreateCommand": "cat /etc/os-release",
+  "postCreateCommand": "npm i -g @tailcallhq/tailcall",
 
   // Configure tool-specific properties.
   // "customizations": {},
