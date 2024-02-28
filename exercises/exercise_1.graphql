@@ -1,4 +1,4 @@
-schema @server(port: 4000, graphiql: true) @upstream(baseURL: "http://jsonplaceholder.typicode.com") {
+schema @server(port: 4000, graphiql: true) @upstream(baseURL: "http://jsonplaceholder.typicode.com", batch: {delay: 10}) {
   query: Query
 }
 
@@ -21,7 +21,11 @@ type Post {
   userId: Int!
   title: String!
   body: String!
-  user: User @http(path: "/users/{{value.userId}}")
+  user: User @http(
+    path: "/users", 
+    query: [{key: "id", value: "{{value.userId}}"}]
+    groupBy: ["id"]
+  )
 }
 
 type Comments {
